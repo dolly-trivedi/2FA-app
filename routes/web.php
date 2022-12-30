@@ -22,5 +22,5 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::post('/save-push-notification-token', [App\Http\Controllers\HomeController::class, 'savePushNotificationToken'])->name('save-push-notification-token');
-Route::post('/send-push-notification', [App\Http\Controllers\HomeController::class, 'sendPushNotification'])->name('send.push-notification');
+Route::get('push-notification', [App\Http\Controllers\NotificationController::class, 'index']);
+Route::post('sendNotification', [App\Http\Controllers\NotificationController::class, 'sendNotification'])->name('send.notification');
