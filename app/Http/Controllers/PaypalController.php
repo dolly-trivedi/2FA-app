@@ -22,6 +22,8 @@ use PayPal\Api\PaymentExecution;
 use PayPal\Api\Transaction;
 use App\Models\Payment;
 
+#commented code created with PAYPAL REST-API-SDK package. And reset is created with OMNIPAY package.
+
 
 class PaypalController extends Controller
 {
@@ -70,7 +72,6 @@ class PaypalController extends Controller
             return $th->getMessage();
         }
 
-        #commented code created with PAYPAL RESE-API-SDK package. And reset is created with OMNIPAY package.
 
     //    $payer = new Payer();
     //    $payer->setPaymentMethod('paypal');
