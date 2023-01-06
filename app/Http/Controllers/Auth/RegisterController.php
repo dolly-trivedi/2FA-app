@@ -64,10 +64,13 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
+        $data= User::create([
             'name' => $data['name'],
             'email' => $data['email'],
+            'phone' => $data['phone'],
             'password' => Hash::make($data['password']),
         ]);
+         auth()->user()->generateCode();
+         return route('2fa.index')->with('success','OTP Send to this number');
     }
 }
